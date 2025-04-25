@@ -1,0 +1,86 @@
+.task-card {
+    margin-bottom: 12px;
+    cursor: grab;
+  }
+  
+  .task-card:active {
+    cursor: grabbing;
+  }
+  
+  mat-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  mat-card-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .card-actions {
+    margin-left: auto;
+  }
+  
+  .description {
+    font-size: 14px;
+    margin-bottom: 16px;
+    color: rgba(0, 0, 0, 0.7);
+    white-space: pre-line;
+  }
+  
+  .task-metadata {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+  }
+  
+  .due-date {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .due-date mat-icon {
+    font-size: 16px;
+    height: 16px;
+    width: 16px;
+  }
+  
+  .status-chip {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  /* Status colors */
+  .todo {
+    background-color: #e3f2fd;
+    color: #0277bd;
+  }
+  
+  .in-progress {
+    background-color: #fff8e1;
+    color: #ff8f00;
+  }
+  
+  .done {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+  }
+  
+  /* Due date warning */
+  .overdue {
+    color: #d32f2f;
+  }
+  
+  .due-soon {
+    color: #f57c00;
+  }
+  
+  .on-time {
+    color: #388e3c;
+  }

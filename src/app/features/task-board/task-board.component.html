@@ -1,0 +1,86 @@
+<div class="board-container">
+  <div class="board-header">
+    <h1>My Tasks</h1>
+    <button mat-raised-button color="primary" (click)="openTaskForm()">
+      <mat-icon>add</mat-icon> New Task
+    </button>
+  </div>
+
+  <div *ngIf="loading$ | async" class="loading-container">
+    <mat-spinner [diameter]="40"></mat-spinner>
+  </div>
+
+  <div *ngIf="error$ | async as error" class="error-message">
+    <p>{{ error }}</p>
+  </div>
+
+  <div cdkDropListGroup class="board-content">
+    <!-- To Do Column -->
+    <div class="board-column responsive-column todo-bg">
+      <div class="column-header">
+        <h2>To Do</h2>
+        <span class="task-count">{{ todoTasks.length || 0 }}</span>
+      </div>
+
+      <div cdkDropList [cdkDropListData]="todoTasks" (cdkDropListDropped)="onDrop($event, TaskStatus.TODO)"
+        class="tasks-container" id="todo-list">
+
+        <div *ngIf="!todoTasks?.length" class="empty-list">
+          <p>No tasks to do</p>
+        </div>
+        @for (task of todoTasks; track task) {
+        <app-task-card [task]="task" cdkDrag [cdkDragData]="task" class="fade-in" (edit)="editTask($event)"
+          (delete)="deleteTask($event)">
+        </app-task-card>
+        }
+
+      </div>
+    </div>
+
+    <!-- In Progress Column -->
+    <div class="board-column responsive-column in-progress-bg">
+      <div class="column-header">
+        <h2>In Progress</h2>
+        <span class="task-count">{{ inProgressTasks.length || 0 }}</span>
+      </div>
+
+      <div cdkDropList [cdkDropListData]="inProgressTasks" (cdkDropListDropped)="onDrop($event, TaskStatus.IN_PROGRESS)"
+        class="tasks-container" id="in-progress-list">
+
+        <div *ngIf="!inProgressTasks?.length" class="empty-list">
+          <p>No tasks in progress</p>
+        </div>
+
+        @for (task of inProgressTasks; track task) {
+        <app-task-card [task]="task" cdkDrag [cdkDragData]="task" class="fade-in" (edit)="editTask($event)"
+          (delete)="deleteTask($event)">
+        </app-task-card>
+        }
+
+      </div>
+    </div>
+
+    <!-- Done Column -->
+    <div class="board-column responsive-column done-bg">
+      <div class="column-header">
+        <h2>Done</h2>
+        <span class="task-count">{{ doneTasks.length || 0 }}</span>
+      </div>
+
+      <div cdkDropList [cdkDropListData]="doneTasks" (cdkDropListDropped)="onDrop($event, TaskStatus.DONE)"
+        class="tasks-container" id="done-list">
+
+        <div *ngIf="!doneTasks?.length" class="empty-list">
+          <p>No completed tasks</p>
+        </div>
+
+        @for (task of doneTasks; track task) {
+        <app-task-card [task]="task" cdkDrag [cdkDragData]="task" class="fade-in" (edit)="editTask($event)"
+          (delete)="deleteTask($event)">
+        </app-task-card>
+        }
+
+      </div>
+    </div>
+  </div>
+</div>

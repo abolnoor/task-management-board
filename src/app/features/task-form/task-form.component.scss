@@ -1,0 +1,11 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 350px;
+  }
+  
+  @media (min-width: 600px) {
+    .form-container {
+      min-width: 500px;
+    }
+  }

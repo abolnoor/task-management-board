@@ -1,0 +1,53 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Create project structure",
+      "description": "Set up the initial project structure for the task board application",
+      "dueDate": "2025-04-15",
+      "status": "Done"
+    },
+    {
+      "id": "2",
+      "title": "Implement NGXS store",
+      "description": "Set up the NGXS store for state management",
+      "dueDate": "2025-04-20",
+      "status": "Done"
+    },
+    {
+      "id": "3",
+      "title": "Design UI components",
+      "description": "Create the UI components for the task board",
+      "dueDate": "2025-04-25",
+      "status": "To Do"
+    },
+    {
+      "id": "4",
+      "title": "Implement drag-and-drop",
+      "description": "Add drag-and-drop functionality to move tasks between columns",
+      "dueDate": "2025-04-30",
+      "status": "In Progress"
+    },
+    {
+      "id": "5",
+      "title": "Write unit tests",
+      "description": "Create unit tests for the application",
+      "dueDate": "2025-05-05",
+      "status": "In Progress"
+    },
+    {
+      "title": "bbbbbb",
+      "description": "bbbbbbbbc",
+      "dueDate": "2026-03-02T21:00:00.000Z",
+      "status": "Done",
+      "id": "5693"
+    },
+    {
+      "id": "9557",
+      "title": "ssss",
+      "description": "sss",
+      "dueDate": "2025-04-24T21:00:00.000Z",
+      "status": "To Do"
+    }
+  ]
+}

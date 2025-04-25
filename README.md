@@ -9,8 +9,24 @@ To start a local development server, run:
 ```bash
 ng serve
 ```
+or
+
+```bash 
+pnpm run start:app
+```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
+
+## Mock DB server
+
+To start a local json-server, run:
+
+```bash
+pnpm run start:server
+```
+
+Once the server is running, open your browser and navigate to `http://localhost:3000/`. The DB server api is ready.
 
 ## Code scaffolding
 
